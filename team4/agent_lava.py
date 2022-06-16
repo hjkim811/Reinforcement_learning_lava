@@ -29,7 +29,7 @@ class agent():
     def action(self, state, epi): # state: int 또는 numpy.array
         self.step += 1
 
-        if type(state) == np.int64:
+        if type(state) == np.int64 or type(state) == np.int32:
             state = np.eye(self.nS)[state] # 벡터로
         state = torch.from_numpy(state).float()
 

@@ -29,7 +29,7 @@ class agent():
     def action(self, state):
         self.step += 1
 
-        if type(state) == np.int64:
+        if type(state) == np.int64 or type(state) == np.int32:
             state = np.eye(self.nS)[state]
         state = torch.from_numpy(state).float()
 
